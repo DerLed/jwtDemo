@@ -1,5 +1,6 @@
 package ru.lebedev.jwtDemo.domain.user;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -9,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
     private final String username;
@@ -58,7 +60,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getStatus().equals(Status.ACTIVE),
                 user.getStatus().equals(Status.ACTIVE),
                 user.getStatus().equals(Status.ACTIVE),
-                user.getRole().g
-        )
+                user.getRole().getAuthorities()
+        );
     }
 }

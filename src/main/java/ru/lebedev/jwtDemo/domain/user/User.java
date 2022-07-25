@@ -19,9 +19,9 @@ public class User {
     private String username;
 
     private String passwordHash;
-
+    @Enumerated(EnumType.STRING)
     private Role role;
-
+    @Enumerated(EnumType.STRING)
     private Status status;
 
 
