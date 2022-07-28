@@ -1,7 +1,7 @@
 package ru.lebedev.jwtDemo.domain.security;
 
 public enum Permission {
-    READ("1"), WRITE("2")
+    READ("read"), WRITE("write")
     ;
     private final String permission;
 

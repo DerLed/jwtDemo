@@ -1,6 +1,7 @@
 package ru.lebedev.jwtDemo.domain.message;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class MessageRestControllerV1 {
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('write')")
     public Message one(@RequestBody Message message){
         return messageService.save(message);
     }
