@@ -24,7 +24,7 @@ public class MessageRestControllerV1 {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('write')")
+    @PreAuthorize("hasAuthority('message:write')")
     public Message one(@RequestBody Message message){
         return messageService.save(message);
     }

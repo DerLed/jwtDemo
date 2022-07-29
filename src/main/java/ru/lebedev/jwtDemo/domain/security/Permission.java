@@ -1,11 +1,12 @@
 package ru.lebedev.jwtDemo.domain.security;
 
 public enum Permission {
-    READ("read"), WRITE("write")
-    ;
+    MESSAGE_READ("message:read"),
+    MESSAGE_WRITE("message:write");
+
     private final String permission;
 
-    Permission(String permission){
+    Permission(String permission) {
         this.permission = permission;
     }
 
