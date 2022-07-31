@@ -24,8 +24,15 @@ public class MessageRestControllerV1 {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('message:write')")
-    public Message one(@RequestBody Message message){
+    //@PreAuthorize("hasAuthority('message:write')")
+    public Message create(@RequestBody Message message){
+        return messageService.save(message);
+    }
+
+    @PutMapping("/{id}")
+    //@PreAuthorize("hasAuthority('message:write')")
+    public Message update(@PathVariable Long id, @RequestBody Message message){
+        message.setId(id);
         return messageService.save(message);
     }
 }
